@@ -10,3 +10,6 @@ class Settings:
 
         # display color definition
         self.bg_color = (230, 230, 230)
+
+        # ship settings
+        self.ship_speed = 1.5

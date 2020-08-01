@@ -44,9 +44,6 @@ class AlienInvasion:
                     self.ship.moving_right = False
                 elif event.key == pygame.K_LEFT:
                     self.ship.moving_left = False
-                    # self.ship.rect.x += 1
-                # elif event.key == pygame.K_LEFT:
-                #     self.ship.rect.x -= 1
 
     def _update_screen(self):
         """Update of screen images"""

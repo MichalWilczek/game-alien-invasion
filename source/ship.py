@@ -8,6 +8,7 @@ class Ship:
         """Initialization of the ship and its position"""
 
         self.screen = alien_invasion_game.screen
+        self.settings = alien_invasion_game.settings
         self.screen_rect = alien_invasion_game.screen.get_rect()
 
         # load the spacecraft image and download its rectangle
@@ -17,14 +18,20 @@ class Ship:
         # each new ship shows up at the bottom of the screen
         self.rect.midbottom = self.screen_rect.midbottom
 
+        # ship's position is stored as float
+        self.x = float(self.rect.x)
+
+        # options indicating the ship movement
         self.moving_right = False
         self.moving_left = False
 
     def update(self):
-        if self.moving_right:
-            self.rect.x += 1
-        elif self.moving_left:
-            self.rect.x -= 1
+        if self.moving_right and self.rect.right < self.screen_rect.right:
+            self.x += self.settings.ship_speed
+        elif self.moving_left and self.rect.left > 0:
+            self.x -= self.settings.ship_speed
+        # update of the ship position based on self.x
+        self.rect.x = self.x
 
     def blitme(self):
         """Spacecraft display in its current position"""
