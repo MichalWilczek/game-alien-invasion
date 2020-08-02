@@ -6,10 +6,10 @@ class Bullet(Sprite):
     """Class dedicated to manage bullets shot by the ship"""
 
     def __init__(self, alien_invasion_game):
-        super(Sprite, self).__init__()
+        super().__init__()
         self.screen = alien_invasion_game.screen
         self.settings = alien_invasion_game.settings
-        self.color = self.settings.bulet.color
+        self.color = self.settings.bullet_color
 
         # creation of the bullet rectangle at position (0, 0)
         # then, its proper position definition
