@@ -7,7 +7,9 @@ class GameStats:
         self.settings = alien_invasion.settings
         self.ships_left = None
         self.reset_stats()
-        self.game_active = True
+
+        # starting the game in inactive mode
+        self.game_active = False
 
     def reset_stats(self):
         """Initialization of the statistical data which can vary in the game"""
