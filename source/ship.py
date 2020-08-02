@@ -25,6 +25,15 @@ class Ship:
         self.moving_right = False
         self.moving_left = False
 
+    def blitme(self):
+        """Spacecraft display in its current position"""
+        self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+        """Placing the ship at the bottom center of the screen"""
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
+
     def update(self):
         """Update the ship's position based on movement flags"""
         if self.moving_right and self.rect.right < self.screen_rect.right:
@@ -34,7 +43,3 @@ class Ship:
 
         # update rect object from self.x.
         self.rect.x = self.x
-
-    def blitme(self):
-        """Spacecraft display in its current position"""
-        self.screen.blit(self.image, self.rect)
